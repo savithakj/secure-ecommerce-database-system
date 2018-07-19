@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The web application is built on Ruby on Rails with Postgres Server.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
 * Configuration
-
+```bash
+pip install requirements.txt
+```
 * Database creation
+
+import a PostgreSQL database using the psql program
+
+```bash
+psql -U  ecommerce < dbexport.pgsql
+```
 
 * Database initialization
 
-* How to run the test suite
+```bash
 
-* Services (job queues, cache servers, search engines, etc.)
+alembic upgrade head
+```
 
-* Deployment instructions
-
-* ...
+ * Rail Server
+ To install a dependencies using the gem dependency manager and to start Rails server
+ ```bash
+ 
+ bundle
+ bundle exec rails s
+ ```
+Web application would be started by default in https://localhost:3000/

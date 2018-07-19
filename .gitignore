@@ -64,3 +64,5 @@ templates/login.html
 templates/signUp.html
 test-mysql/
 venv/
+
+

@@ -12,12 +12,18 @@
   <tbody>
     <% @invoices.each do |invoice| %>
       <tr>
-        <td><%= link_to 'Show', invoice %></td>
+        <td><%= link_to invoice.invoice_number ,invoice %></td>
+        <td><%= link_to invoice.description ,invoice %></td>
+        <td><%= link_to invoice.quantity ,invoice %></td>
+        <td><%= link_to invoice.invoice_date ,invoice %></td>
         <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
         <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
+  <tbody>
+
+
 </table>
 
 <br>
