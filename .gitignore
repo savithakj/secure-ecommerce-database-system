@@ -53,3 +53,14 @@ Temporary Items
 
 
 ecommerce/.idea/workspace.xml
+.idea/
+authenticator.py
+dump.sql
+
+index.py
+static/
+templates/display_results.html
+templates/login.html
+templates/signUp.html
+test-mysql/
+venv/

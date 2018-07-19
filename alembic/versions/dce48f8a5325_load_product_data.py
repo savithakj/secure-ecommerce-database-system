@@ -19,7 +19,7 @@ depends_on = None
 def upgrade():
     op.execute('INSERT INTO products (stock_code,description,unit_price) '
                 ' (SELECT stock_code,description,unit_price FROM  invoices )'
-                ' ON CONFLICT (stock_code, unit_price) DO NOTHING;')
+                ' ON CONFLICT (description) DO NOTHING;')
 
 
     op.execute('COMMIT')

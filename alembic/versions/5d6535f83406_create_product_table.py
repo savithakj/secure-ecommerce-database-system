@@ -29,7 +29,7 @@ def upgrade():
     )
 
     op.execute('COMMIT')
-    op.create_index(index_name='index_on_sc_up', table_name='products', columns=['stock_code','unit_price'], unique=True)
+    op.create_index(index_name='index_on_d', table_name='products', columns=['description'], unique=True)
     op.execute('COMMIT')
 
 
