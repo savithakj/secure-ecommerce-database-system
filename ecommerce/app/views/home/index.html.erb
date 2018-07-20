@@ -2,8 +2,8 @@
 <p>Welcome to our Ecommerce App</p>
 
 
-<a href="<%= products_path %>">Products</a>
-<a href="<%= invoices_path %>">Invoices</a>
+<a class="button btn btn-secondary" style="color: white;" href="<%= products_path %>">Products</a>
+<a class="button btn btn-secondary" style="color: white;" href="<%= invoices_path %>">Invoices</a>
 <% if (can? :read, User) %>
-<a href="<%= users_path %>">Users</a>
+<a class="button btn btn-secondary" style="color: white;" href="<%= users_path %>">Users</a>
 <% end %>

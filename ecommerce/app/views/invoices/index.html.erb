@@ -10,16 +10,24 @@
   </thead>
 
   <tbody>
+  <% if @invoices.count > 0 %>
     <% @invoices.each do |invoice| %>
       <tr>
-        <td><%= link_to invoice.invoice_number ,invoice %></td>
-        <td><%= link_to invoice.description ,invoice %></td>
-        <td><%= link_to invoice.quantity ,invoice %></td>
-        <td><%= link_to invoice.invoice_date ,invoice %></td>
+        <td><%= link_to invoice.invoice_number, invoice %></td>
+        <td><%= link_to invoice.description, invoice %></td>
+        <td><%= link_to invoice.quantity, invoice %></td>
+        <td><%= link_to invoice.invoice_date, invoice %></td>
         <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', invoice, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
+  <% else %>
+    <% if current_user.customer_id %>
+       <h4> No Invoices for customer id <%= current_user.customer_id %></h4>
+    <% else %>
+      <h4> You dont have a customer id </h4>
+    <% end %>
+  <% end %>
   </tbody>
   <tbody>
 

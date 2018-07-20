@@ -32,3 +32,9 @@ alembic upgrade head
  bundle exec rails s
  ```
 Web application would be started by default in https://localhost:3000/
+
+For testing purpose,
+
+Customer test account username:testuser@rit.edu and password : test123
+
+Administrator test account username:testadmin@rit.edu and password: testadmin

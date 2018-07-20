@@ -1,11 +1,16 @@
 class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /invoices
   # GET /invoices.json
   def index
     # binding.pry
-    @invoices = Invoice.all.accessible_by(current_user.ability, :read)
+    if current_user.customer_id.present?
+      @invoices = Invoice.all.accessible_by(current_user.ability, :read)
+    else
+      @invoices = []
+    end
   end
 
   # GET /invoices/1
