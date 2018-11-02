@@ -1,6 +1,7 @@
 # README
 
-The web application is built on Ruby on Rails with Postgres Server.
+
+This is a web application which showcases role based authentication of data. The application is written in Ruby ( on Rails ) and uses PostgreSql
 
 * Files and Location
 requirements.txt --> data migration/requirements.txt
@@ -9,135 +10,77 @@ dbexport.pgsql --> data_dump/dbexport.pgsql
 
 For Ubuntu Users,
 
-Steps for installing Ruby on Rails.
+## Steps for installing Ruby on Rails.
+### Installing Ruby on Ubuntu
+- sudo apt-get update && apt-get install curl
+- curl -L https://get.rvm.io | bash -s stable --ruby # installs ruby version manager
+  - source ~/.rvm/scripts/rvm
+- rvm get stable --autolibs=enable
+- rvm install ruby-2.5
 
-Step 1: sudo apt-get update
-Step 2 sudo apt-get install curl
-Step 3a:curl -L https://get.rvm.io | bash -s stable --ruby
+Once the installation of Ruby is done:
+- rvm --default use ruby-2.5
+- gem install bundler --no-ri --no-rdoc 
+- gem install rails --no-ri --no-rdoc
 
-Step 3 b: source ~/.rvm/scripts/rvm
-Step 4: rvm get stable --autolibs=enable
-Step 5: rvm install ruby
-Step 6: rvm --default use ruby-2.5.1
-Step 7: gem install bundler 
-Step 8: gem install rails
+### Installing Ruby on a Mac machine. 
 
-Steps for installing Database
+MacOS comes with a "system Ruby" pre-installed. MacOS High Sierra includes Ruby 2.0.0p645 which is not the newest version. We should update to Ruby 2.5.0 by using RVM, the Ruby Version Manager.
 
-Step 1:sudo apt-get update
-Step 2:sudo apt-get install postgresql
+Let start off my installing Homebrew, if not already installed. 
 
-Steps for installing Python
+- `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)`
 
-Step 1:sudo apt-get update
-Step 2:sudo apt-get install python3.6
+#### Steps for installing Ruby on Rails.
 
-For Setting up with the project envirnment,
+- brew install gpg
 
-Step 1: pip install requirements.txt
-Step 2: psql ecommerce < dbexport.pgsql
-
-Set the directory ecommerce,start the rails Server
-
-Step 1: bundle
-Step 2: bundle exec rails s
-
-Open https://localhost:3000/ in any browser.
-Web application would be started by default in https://localhost:3000/
-
-
-
-
-
-For Mac Users,
-
-MacOS comes with a "system Ruby" pre-installed. MacOS High Sierra includes Ruby 2.0.0p645 which is not the newest version.You should update to Ruby 2.5.0 by using RVM, the Ruby Version Manager.
-
-Please install Homebrew
-
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-Steps for installing Ruby on Rails.
-
-Step 1: brew install gpg
 After GPG is installed (or if it is already installed), install the security key for RVM:
-Step 2 command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-If you skip the gpg steps you may not be able to install RVM.
 
-Step 3a:curl -L https://get.rvm.io | bash -s stable
+- curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 
-STep 3b: source ~/.rvm/scripts/rvm
-Step 4: rvm get stable --autolibs=enable
-Step 5: rvm install ruby-2.5.0
-Step 6: rvm --default use ruby-2.5.1
-Step 7: gem install bundler 
-Step 8: gem install rails
+NOTE: If you skip the gpg steps you may not be able to install RVM.
 
-Steps for installing Database
-
-Step 1:Download Postgres.app from https://postgresapp.com/ and follow steps for installing
-
-Steps for installing Python
-
-Step 1:brew install python
-
-For Setting up with the project envirnment,
-
-Step 1: pip install requirements.txt
-Step 2: psql ecommerce < dbexport.pgsql
-
-Set the directory ecommerce,start the rails Server
-
-Step 1: bundle
-Step 2: bundle exec rails s
-
-Open https://localhost:3000/ in any browser.
+- curl -L https://get.rvm.io | bash -s stable
+  - source ~/.rvm/scripts/rvm
+- rvm get stable --autolibs=enable
+- rvm install ruby-2.5.0
+- rvm --default use ruby-2.5.1
+- gem install bundler --no-ri 
+- gem install rails  --no-rdoc
 
 
+## Steps for installing Database
+
+To install on a debian based on:
+- sudo apt-get update && apt-get install postgresql
+
+I recommend using the excellent [Postgres app for Mac](https://postgresapp.com/).
+
+## Steps for installing Python
+
+sudo apt-get update && apt-get install python3.6
+
+## For Setting up with the project envirnment,
+
+- pip install requirements.txt
+- psql ecommerce < dbexport.pgsql
+
+### Why do I have the app in Ruby and db import script in python?
+
+I started off this small project on Python, but then I wanted to try and learn Ruby on Rails. I never got around to rewriting the said script into Ruby
 
 
-For Windows Users,
+### Starting the application.
 
-Steps for installing Ruby on Rails.
+Within the application directory, run:
+- bundle
+- bundle exec rails s
 
-Step 1:Open "Bash on Ubuntu on Windows"
-Step 2:sudo apt-get update
-STep 3:sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev
-Step 4:sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
-Step 5:gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-Step 6: curl -sSL https://get.rvm.io | bash -s stable
-Step 7:source ~/.rvm/scripts/rvm
-Step 8:rvm install 2.5.1
-Step 9:rvm use 2.5.1 --default
-Step 10:ruby -v
-Step 11: gem install bundler
-
-Step 8: gem install rails
-
-Steps for installing Database
-
-Step 1:Download Postgres.app from https://www.postgresql.org/download/windows/ and follow steps for installing
-
-Steps for installing Python
-
-Step 1:brew install python
-
-For Setting up with the project envirnment,
-
-Step 1: pip install requirements.txt
-Step 2: psql ecommerce < dbexport.pgsql
-
-Set the directory ecommerce,start the rails Server
-
-Step 1: bundle
-Step 2: bundle exec rails s
+### Lets checout the app :)
 
 Open https://localhost:3000/ in any browser.
-
-
-
 For testing purpose,
 
-Customer test account username:testuser@rit.edu and password : test123
-
-Administrator test account username:testadmin@rit.edu and password: testadmin
+Customer test account: `username:testuser@rit.edu` and `password : test123`
+Administrator test account: `username:testadmin@rit.edu` and `password: testadmin`
