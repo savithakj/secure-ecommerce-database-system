@@ -77,7 +77,7 @@ Within the application directory, run:
 - bundle
 - bundle exec rails s
 
-### Lets checout the app :)
+### Lets checkout the app :)
 
 Open https://localhost:3000/ in any browser.
 For testing purpose,
